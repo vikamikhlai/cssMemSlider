@@ -84,27 +84,6 @@ img {
     opacity: 0.5;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-    .bottom {
-        flex-direction: column-reverse; 
-    }
-
-    .slider__text {
-        width: 100%;
-    }
-    
-    .navigation {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .btn {
-        height: 1.8rem;
-        width: 1.8rem;
-        border: 0.5rem solid black;
-    }
-}
-
 input {
     display: none;
 }
@@ -131,4 +110,25 @@ input {
 #switch4:checked ~ .bottom .navigation .fourth-btn {
     background-color: red;
     transition: 0.4s ease;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .bottom {
+        flex-direction: column-reverse; 
+    }
+
+    .slider__text {
+        width: 100%;
+    }
+    
+    .navigation {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        height: 1.8rem;
+        width: 1.8rem;
+        border: 0.5rem solid black;
+    }
 }
