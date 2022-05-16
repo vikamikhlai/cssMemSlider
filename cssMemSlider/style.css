@@ -11,14 +11,15 @@ html {
 .wrapper {
     margin: 0 auto;
     border: 10px solid #FFF;
-    width: 720px;
+    width: 62.5rem;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 2%;  
 }
 
 .slides {
     display: flex;
     width: 400%;
+    transition: all 1s ease-out;
 }
 
 .slider{
@@ -44,6 +45,7 @@ html {
 .slider__text-container {
     display: flex;
     width: 400%;
+    transition: all 1s ease-out;
 }
 
 .slide__text {
@@ -52,6 +54,7 @@ html {
     color: white;
     min-width: 25%;
     overflow: hidden;
+    line-height: 2rem;
 }
 
 .navigation {
@@ -66,8 +69,8 @@ html {
 }
 
 img {
-    width: 46.75rem;
-    height: 40.5rem;
+    width: 65.75rem;
+    height: 50.5rem;
 }
 
 .btn {
@@ -89,8 +92,7 @@ img {
 }
 
 input {
-    position: absolute;
-    visibility: hidden;
+    display: none;
 }
 
 #switch1:checked ~ .slides, #switch1:checked ~ .bottom .slider__text-container {
@@ -108,9 +110,3 @@ input {
 #switch4:checked ~ .slides, #switch4:checked ~ .bottom .slider__text-container {
     transform: translateX(-75%);
 }
-
-
-/* 
-#switch4:checked ~ .slide__text:first-child {
-    margin-left: -75%;
-} */
