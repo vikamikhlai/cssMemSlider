@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+}
+
+.wrapper {
+    margin: 0 auto;
+    border: 0.7rem solid rgb(255, 14, 14);
+    width: 90%;
+    max-width: 768px;
+    overflow: hidden;
+    margin-top: 2%;  
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    transition: all 1s ease-out;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+}
+
+.slide {
+    width: 25%;
+}
+
+.bottom {
+    display: flex;
+    padding: 1rem;
+}
+
+.slider__text {
+    width: 50%;
+    height: 400%;
+    overflow: hidden;
+}
+
+.slider__text-container {
+    display: flex;
+    width: 400%;
+    transition: all 1s ease-out;
+}
+
+.slide__text {
+    display: flex;
+    font-size: 4vmin;
+    color: white;
+    min-width: 25%;
+    overflow: hidden;
+    line-height: 2rem;
+    letter-spacing: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.switch {
+    display: flex;
+    justify-content: flex-end;
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 1rem solid black;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+input {
+    display: none;
+}
+
+#switch1:checked ~ .slides, #switch1:checked ~ .bottom .slider__text-container  {
+    transform: translateX(0);
+}
+
+#switch2:checked ~ .slides, #switch2:checked ~ .bottom .slider__text-container {
+    transform: translateX(-25%);
+}
+
+#switch3:checked ~ .slides, #switch3:checked ~ .bottom .slider__text-container {
+    transform: translateX(-50%);
+}
+
+#switch4:checked ~ .slides, #switch4:checked ~ .bottom .slider__text-container {
+    transform: translateX(-75%);
+}
+
+#switch1:checked ~ .bottom .navigation .first-btn,
+#switch2:checked ~ .bottom .navigation .second-btn,
+#switch3:checked ~ .bottom .navigation .third-btn,
+#switch4:checked ~ .bottom .navigation .fourth-btn {
+    background-color: red;
+    transition: 0.4s ease;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .bottom {
+        flex-direction: column-reverse; 
+    }
+
+    .slider__text {
+        width: 100%;
+    }
+    
+    .navigation {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        height: 1.8rem;
+        width: 1.8rem;
+        border: 0.5rem solid black;
+    }
+}
