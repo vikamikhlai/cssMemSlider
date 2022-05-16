@@ -11,7 +11,8 @@ html {
 .wrapper {
     margin: 0 auto;
     border: 10px solid #FFF;
-    width: 62.5rem;
+    width: 90%;
+    max-width: 768px;
     overflow: hidden;
     margin-top: 2%;  
 }
@@ -50,11 +51,13 @@ html {
 
 .slide__text {
     display: flex;
-    font-size: 2rem;
+    font-size: 4vmin;
     color: white;
     min-width: 25%;
     overflow: hidden;
     line-height: 2rem;
+    letter-spacing: 0.2rem;
+    margin-top: 0.5rem;
 }
 
 .navigation {
@@ -69,33 +72,48 @@ html {
 }
 
 img {
-    width: 65.75rem;
-    height: 50.5rem;
+    width: 100%;
 }
 
 .btn {
-    height: 10px;
-    width: 10px;
-    border-radius: 10px;
-    margin: 6px;
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 50%;
     cursor: pointer;
     background-color: #FFF;
+    border: 1rem solid black;
 }
 
 .btn:hover {
     opacity: 0.5;
 }
 
-.btn:active {
-    background-color: black;
-    border: #FFF;
+@media (min-width: 320px) and (max-width: 480px) {
+    .bottom {
+        flex-direction: column-reverse; 
+    }
+
+    .slider__text {
+        width: 100%;
+    }
+    
+    .navigation {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        height: 1.8rem;
+        width: 1.8rem;
+        border: 0.5rem solid black;
+    }
 }
 
 input {
     display: none;
 }
 
-#switch1:checked ~ .slides, #switch1:checked ~ .bottom .slider__text-container {
+#switch1:checked ~ .slides, #switch1:checked ~ .bottom .slider__text-container  {
     transform: translateX(0);
 }
 
@@ -109,4 +127,12 @@ input {
 
 #switch4:checked ~ .slides, #switch4:checked ~ .bottom .slider__text-container {
     transform: translateX(-75%);
+}
+
+#switch1:checked ~ .bottom .navigation .first-btn,
+#switch2:checked ~ .bottom .navigation .second-btn,
+#switch3:checked ~ .bottom .navigation .third-btn,
+#switch4:checked ~ .bottom .navigation .fourth-btn {
+    background-color: red;
+    transition: 0.4s ease;
 }
